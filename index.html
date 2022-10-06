@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   1. Show implementation of transition.<br>
+
+   The transition-property specifies the CSS properties to which you want the
+transition effect. Only these CSS properties are animated.<br>
+<pre>
+Code:-
+.box1 {
+width: 100px;
+height: 100px;
+background: lightblue;
+transition-property: width;
+transition-duration: 2s;
+transition-timing-function: linear;
+transition-delay: 1s;
+}
+.box1: hover{
+width: 300px;
+}
+
+OUTPUT:-
+</pre>
+
+<div class="box1"></div>
+<br><br>
+2. Show implementation of transformation.<br>
+
+CSS transforms are a collection of functions that allow to shape elements in
+particular ways:<br>
+● translate: moves the element along up to 3 axis (x, y and z)<br>
+● rotate: moves the element around a central point<br>
+● scale: resizes the element<br>
+● skew: distorts the element<br>
+Code:-
+<pre>
+@keyframes translating {
+0% {
+transform: translate (0, 0);
+}
+25% {
+transform: translate (240px, 0);
+}
+50% {
+transform: translate (240px, 140px);
+}
+75% {
+transform: translate (0, 140px);
+}
+100% {
+transform: translate (0, 0);
+}
+}
+box2 {
+animation: translating 4s linear infinite;
+}
+
+OUTPUT:-
+</pre>
+
+<div class="box2"></div>
+<br><br>
+
+3. Show implementation of grid<br>
+
+<pre>
+.container {
+    display: grid;
+    grid-template-columns: 200px 50px 100px;
+    grid-template-rows: 50px 50px;
+    grid-gap: 5px;
+    text-align: center;
+    justify-content: center;
+    }
+    .item{
+    background-color: aqua;
+    border: 1px solid gray;
+    }
+    .item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    }
+    .item3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    }
+    .item4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    }
+
+    OUTPUT:-
+</pre>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        </div>
+
+       4. What are CSS combinators.<br>
+
+       Combinators combine the selectors to provide them a useful relationship and the
+position of content in the document. This comes in handy when you want to style
+certain elements all at once rather than styling elements individually. CSS
+combinator selectors are as follows.<br>
+1. Descendant Selector (space)<br>
+2. Child Selector (>)<br>
+3. Adjacent Sibling Selector (+)<br>
+4. General Sibling Selector (~)<br><br>
+Descendant Selector : The descendant selector matches all elements that are
+descendants of a specified element. <br> 
+
+<pre>
+    CSS :
+    div p { /* --> (div is the parent and the p is the child) */
+    color: blue;
+    font-family: 'Times New Roman';
+    font-weight: bolder;
+    font-size: xx-large;
+    }
+</pre>
+    <div class="a">
+        <h2>Hello World!</h2>
+        <p class="a1">I am child paragraph</p>
+        <p class="a1">I am child paragraph</p>
+        </div>
+        <br><br>
+        Child Selector : The child selector will only affect elements under a direct
+parent. A good way to remember this is that a child will only listen to its direct
+parents.<br>
+<pre>
+CSS :
+div > p {
+color: blue;
+font-family: sans-serif;
+font-weight: bold;
+}
+</pre>
+<div class="b">
+    <h2>This heading is a direct child of the div tag.</h2>
+    <p class="b1">So is this paragraph tag.</p>
+    <button>
+    <p class="b1">This paragraph tag is NOT a direct child of the first div</p>
+    </button>
+    <p class="b1">This paragraph tag is also a child of the div tag</p>
+    </div>
+<br><br>
+    Adjacent Sibling Selector : To use the adjacent sibling selector in your CSS
+stylesheet, you simply need the plus (+) sign. The adjacent sibling selector is used
+to select an element that is directly after another specific element.<br>
+
+
+CSS :
+<pre>
+h2+p {
+color: blue;
+font-family: sans-serif;
+font-weight: bold;
+}
+OUTPUT:-
+</pre>
+<div class="c">
+    <h2 class="d">This is a H2 tag.</h2>
+    <p class="d1">This p tag immediately follows the heading.</p>
+    <button>
+    <p class="d1">This p tag is NOT immediately following a H2 tag.</p>
+    </button>
+    <h2 class="d">Howdy! This is another H2 tag.</h2>
+    <p class="d1">This p tag is after another H2 tag and gets formatted.</p>
+    </div>
+
+    <br><br>
+    General Sibling Selectors :The general sibling selector follows through on all
+elements under the targeted HTML element selected. This means that if another
+element tag interrupts the direct adjacent flow, the style rules can still follow
+through.<br>
+
+<pre>
+CSS :
+button~p {
+color: blue;
+font-family: sans-serif;
+font-weight: bold;
+}
+
+OUTPUT:-
+</pre>
+<div class="e">
+    <h2 class="f">I am heading tag!</h2>
+    <p class="g">I am paragraph tag 1.</p>
+    <button class="i">
+    <p class="g">I am a paragraph tag inside a button!</p>
+    </button>
+    <p class="g">I am paragraph tag 2.</p>
+    <p class="g">I am paragraph tag 3.</p>
+    <h3 class="h">I am another heading tag!</h3>
+    <p class="g">I am paragraph tag 4.</p>
+    </div>
+<br><br>
+    6. What are pseudo selectors in CSS.<br>
+
+    CSS pseudo-classes are used to add styles to selectors, but only when those
+selectors meet certain conditions.<br> A pseudo class is expressed by adding a colon (:)
+after a selector in CSS, followed by a pseudo-class such as "hover", "focus", or
+"active", like this:<br>
+<pre>
+a:hover {
+/*add your style here */
+}
+
+
+Syntax:
+selector:pseudo-class {
+property : value;
+}
+
+
+Some Examples of Pseudo-Class:
+
+
+:active           It is used to add style to an active element.
+:hover            It adds special effects to an element when the user moves the mouse pointer over the element.
+:link             It adds style to the unvisited link.
+:visited          It adds style to a visited link.
+:lang             It is used to define a language to use in a specified element.
+:focus            It selects the element which is focused by the user currently.
+:first-child      It adds special effects to an element, which is the first child of another element 
+</pre>
+
+</body>
+</html>

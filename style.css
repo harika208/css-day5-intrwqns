@@ -1,0 +1,92 @@
+.box1 {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+    }
+    .box1:hover{
+    width: 300px;
+    }
+
+
+   
+        .box2 {
+            height: 100px;
+            width:100px;
+            background-color: blueviolet;
+        animation: translating 4s linear infinite;
+        }
+        @keyframes translating {
+            0% {
+            transform: translate (0, 0);
+            }
+            25% {
+            transform: translate (240px, 0);
+            }
+            50% {
+            transform: translate (240px, 140px);
+            }
+            75% {
+            transform: translate (0, 140px);
+            }
+            100% {
+            transform: translate (0, 0);
+            }
+            }
+
+
+            .container {
+                display: grid;
+                grid-template-columns: 200px 50px 100px;
+                grid-template-rows: 50px 50px;
+                grid-gap: 5px;
+                text-align: center;
+                justify-content: center;
+                }
+                .item{
+                background-color: aqua;
+                border: 1px solid gray;
+                }
+                .item1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                }
+                .item3 {
+                grid-row-start: 2;
+                grid-row-end: 4;
+                }
+                .item4 {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            
+            
+            }
+            
+            .a, .a1 { 
+                color: blue;
+                font-family: 'Times New Roman';
+                font-weight: bolder;
+                font-size: xx-large;
+                }
+
+                .b > .b1 {
+                    color: blue;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    }
+
+                    
+.d+.d1 {
+color: blue;
+font-family: sans-serif;
+font-weight: bold;
+}
+
+i ~ g {
+    color: blue;
+    font-family: sans-serif;
+    font-weight: bold;
+    }
